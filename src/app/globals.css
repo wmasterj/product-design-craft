@@ -1,0 +1,36 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens live here, not in a JS config — this is Tailwind v4's
+ * CSS-first model. Anything declared in @theme becomes a utility
+ * (e.g. --color-canvas -> bg-canvas, text-canvas, border-canvas).
+ */
+@theme {
+  --color-canvas: oklch(0.99 0 0);
+  --color-ink: oklch(0.21 0.01 265);
+  --color-muted: oklch(0.55 0.02 265);
+  --color-line: oklch(0.92 0.01 265);
+  --color-accent: oklch(0.58 0.19 265);
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+  @theme {
+    --color-canvas: oklch(0.17 0.01 265);
+    --color-ink: oklch(0.96 0 0);
+    --color-muted: oklch(0.68 0.02 265);
+    --color-line: oklch(0.29 0.01 265);
+    --color-accent: oklch(0.72 0.16 265);
+  }
+}
+
+@layer base {
+  body {
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
