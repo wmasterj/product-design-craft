@@ -6,6 +6,9 @@ Next.js 16 (App Router) · React 19 · TypeScript strict · Tailwind v4 · Vites
 Testing Library · Playwright · pnpm · deployed on Vercel. No database — see
 `docs/adr/0002-no-database.md`.
 
+Routes live under `src/app/[locale]/`; see `docs/adr/0004-locale-route-segment.md`.
+Locale negotiation is in `src/proxy.ts`, supported locales in `src/lib/i18n.ts`.
+
 Design tokens live in `@theme` in `src/app/globals.css`. There is no
 `tailwind.config.js`; Tailwind v4 is CSS-first.
 
